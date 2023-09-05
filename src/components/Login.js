@@ -15,6 +15,16 @@ import {
 from 'mdb-react-ui-kit';
 
 function Login() {
+
+  const signIn = (event) =>{
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+
+    //alert(`Hello ${firstname}`)
+    console.log(email,password);
+  }
   return (
     <MDBContainer fluid>
 
@@ -26,16 +36,16 @@ function Login() {
 
               <h2 className="fw-bold mb-2 text-center">Sign in</h2>
               <p className="text-white-50 mb-3">Please enter your login and password!</p>
-
-              <MDBInput wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
-              <MDBInput wrapperClass='mb-4 w-100' label='Password' id='formControlLg' type='password' size="lg"/>
+              <form onSubmit={signIn}>
+              <MDBInput wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' type='email' size="lg" name='email' required={true}/>
+              <MDBInput wrapperClass='mb-4 w-100' label='Password' id='formControlLg' type='password' size="lg" name='password' required={true}/>
 
               <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' />
 
               <MDBBtn size='lg'>
                 Login
               </MDBBtn>
-
+              </form>
               <hr className="my-4" />
 
               <MDBBtn className="mb-2 w-100" size="lg" style={{backgroundColor: '#dd4b39'}}>
