@@ -1,4 +1,6 @@
 import React from 'react';
+// import axios from 'axios';
+// import Swal from 'sweetalert2'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import {
@@ -21,7 +23,16 @@ function Login() {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-
+    // axios.post('http://localhost:6060/api/signin',{
+    //   email,
+    //   password
+    // }).then((res)=>{
+    //   console.log(res);
+    //   Swal.fire( `Login`,'Successfully','success');
+    // }).catch((err)=>{
+    //   console.log(err);
+    //   Swal.fire( `Somthing`,'Wrong','error');
+    // })
     //alert(`Hello ${firstname}`)
     console.log(email,password);
   }
