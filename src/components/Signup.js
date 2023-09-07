@@ -34,6 +34,11 @@ function Signup() {
     //   console.log(res);
     //   Swal.fire( `Hey ${firstname}`,'SignUp Successfully','success');
     // })
+    // .catch((err)=>{
+    //   Swal.fire('Sorry',err.response.data.message,'error')
+    //   console.log(err.response.data.error)
+    //   console.log(err.response.data.message);
+    // })
 
     
     console.log(firstname, lastname, email, password);

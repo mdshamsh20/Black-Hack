@@ -31,7 +31,7 @@ function Login() {
     //   Swal.fire( `Login`,'Successfully','success');
     // }).catch((err)=>{
     //   console.log(err);
-    //   Swal.fire( `Somthing`,'Wrong','error');
+    //   Swal.fire( `Sorry`,err.response.data.message,'error');
     // })
     //alert(`Hello ${firstname}`)
     console.log(email,password);
