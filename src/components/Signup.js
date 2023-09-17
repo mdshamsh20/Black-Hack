@@ -1,165 +1,93 @@
-import React from "react";
-// import axios from 'axios';
-// import Swal from 'sweetalert2'
-import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import React from 'react';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import {
   MDBBtn,
   MDBContainer,
+  MDBRow,
+  MDBCol,
   MDBCard,
   MDBCardBody,
-  MDBCol,
-  MDBRow,
   MDBInput,
   MDBCheckbox,
-  MDBIcon,
-} from "mdb-react-ui-kit";
+  MDBIcon
+}
+from 'mdb-react-ui-kit';
 
 function Signup() {
-  const signUp = (event) => {
-    event.preventDefault();
-    const firstname = event.target.firstname.value;
-    const lastname = event.target.lastname.value;
-    const email = event.target.email.value;
-    const password = event.target.password.value;
-
-    // axios.post('http://localhost:6060/api/signup',{
-    //   firstname,
-    //   lastname,
-    //   email,
-    //   password
-    // })
-    // .then((res)=>{
-    //   console.log(res);
-    //   Swal.fire( `Hey ${firstname}`,'SignUp Successfully','success');
-    // })
-    // .catch((err)=>{
-    //   Swal.fire('Sorry',err.response.data.message,'error')
-    //   console.log(err.response.data.error)
-    //   console.log(err.response.data.message);
-    // })
-
-    
-    console.log(firstname, lastname, email, password);
-  };
   return (
-    <MDBContainer fluid>
-      <div
-        className="p-5 bg-image"
-        style={{
-          backgroundImage:
-            "url(https://mdbootstrap.com/img/new/textures/full/171.jpg)",
-          height: "300px",
-        }}
-      ></div>
+    <MDBContainer fluid className='p-4 background-radial-gradient overflow-hidden'>
 
-      <MDBCard
-        className="mx-5 mb-5 p-5 shadow-5"
-        style={{
-          marginTop: "-100px",
-          background: "hsla(0, 0%, 100%, 0.8)",
-          backdropFilter: "blur(30px)",
-        }}
-      >
-        <MDBCardBody className="p-5 text-center">
-          <h2 className="fw-bold mb-5">Sign up now</h2>
-          <form onSubmit={signUp}>
-            <MDBRow>
-              <MDBCol col="6">
-                <MDBInput
-                  wrapperClass="mb-4"
-                  label="First name"
-                  id="form1"
-                  type="text"
-                  name="firstname"
-                  required={true}
-                />
-              </MDBCol>
+      <MDBRow>
 
-              <MDBCol col="6">
-                <MDBInput
-                  wrapperClass="mb-4"
-                  label="Last name"
-                  id="form1"
-                  type="text"
-                  name="lastname"
-                  required={true}
-                />
-              </MDBCol>
-            </MDBRow>
+        <MDBCol md='6' className='text-center text-md-start d-flex flex-column justify-content-center'>
 
-            <MDBInput
-              wrapperClass="mb-4"
-              label="Email"
-              id="form1"
-              type="email"
-              name="email"
-              required={true}
-            />
-            <MDBInput
-              wrapperClass="mb-4"
-              label="Password"
-              id="form1"
-              type="password"
-              name="password"
-              required={true}
-            />
+          <h1 className="my-5 display-3 fw-bold ls-tight px-3" style={{color: 'hsl(218, 81%, 95%)'}}>
+            The best platform <br />
+            <span style={{color: 'hsl(218, 81%, 75%)'}}>to show your skills</span>
+          </h1>
 
-            <div className="d-flex justify-content-center mb-4">
-              <MDBCheckbox
-                name="flexCheck"
-                value=""
-                id="flexCheckDefault"
-                label="Subscribe to our newsletter"
-              />
-            </div>
+         
 
-            <MDBBtn className="w-100 mb-4" size="md">
-              sign up
-            </MDBBtn>
-          </form>
-          <div className="text-center">
-            <p>or sign up with:</p>
+        </MDBCol>
 
-            <MDBBtn
-              tag="a"
-              color="none"
-              className="mx-3"
-              style={{ color: "#1266f1" }}
-            >
-              <MDBIcon fab icon="facebook-f" size="sm" />
-            </MDBBtn>
+        <MDBCol md='6' className='position-relative'>
 
-            <MDBBtn
-              tag="a"
-              color="none"
-              className="mx-3"
-              style={{ color: "#1266f1" }}
-            >
-              <MDBIcon fab icon="twitter" size="sm" />
-            </MDBBtn>
+          <div id="radius-shape-1" className="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" className="position-absolute shadow-5-strong"></div>
 
-            <MDBBtn
-              tag="a"
-              color="none"
-              className="mx-3"
-              style={{ color: "#1266f1" }}
-            >
-              <MDBIcon fab icon="google" size="sm" />
-            </MDBBtn>
+          <MDBCard className='my-5 bg-glass'>
+            <MDBCardBody className='p-5'>
 
-            <MDBBtn
-              tag="a"
-              color="none"
-              className="mx-3"
-              style={{ color: "#1266f1" }}
-            >
-              <MDBIcon fab icon="github" size="sm" />
-            </MDBBtn>
-          </div>
-        </MDBCardBody>
-      </MDBCard>
+              <MDBRow>
+                <MDBCol col='6'>
+                  <MDBInput wrapperClass='mb-4' label='First name' id='form1' type='text'/>
+                </MDBCol>
+
+                <MDBCol col='6'>
+                  <MDBInput wrapperClass='mb-4' label='Last name' id='form2' type='text'/>
+                </MDBCol>
+              </MDBRow>
+
+              <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='email'/>
+              <MDBInput wrapperClass='mb-4' label='Password' id='form4' type='password'/>
+
+              <div className='d-flex justify-content-center mb-4'>
+                <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to latest update' />
+              </div>
+
+              <MDBBtn className='w-100 mb-4' size='md'>sign up</MDBBtn>
+
+              <div className="text-center">
+
+                <p>or sign up with:</p>
+
+                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
+                  <MDBIcon fab icon='facebook-f' size="sm"/>
+                </MDBBtn>
+
+                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
+                  <MDBIcon fab icon='twitter' size="sm"/>
+                </MDBBtn>
+
+                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
+                  <MDBIcon fab icon='google' size="sm"/>
+                </MDBBtn>
+
+                <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
+                  <MDBIcon fab icon='github' size="sm"/>
+                </MDBBtn>
+
+              </div>
+
+            </MDBCardBody>
+          </MDBCard>
+
+        </MDBCol>
+
+      </MDBRow>
+
     </MDBContainer>
   );
 }
